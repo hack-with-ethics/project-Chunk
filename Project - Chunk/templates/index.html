@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="icon" type="image/x-icon" href="/static/styles/lal.ico">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+    <!-- <style>
+        /* body{
+            background-image: url("{{url_for('static', filename = '/styles/sea.mp4') }}");
+        } */
+        /* #myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+} */
+
+    </style> -->
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="/static/styles/sea.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+    <div class="container">
+       <form action="/" method="POST">
+            <h1>Login <i id="lg" class="fa-solid fa-shield"></i></h1>
+        
+            <input id="n" type="text" name="user" placeholder="Enter the username" required><i id="user" class="fa-solid fa-user"></i><br>
+       
+            <input id="p" type="password" name="pass" placeholder="Enter the password" required><br>
+            <input onclick="info()" type="submit" name="login" value="login"><i class="fa-solid fa-lock"></i>
+            <!-- <div id="videobackground">
+                <iframe width="560" height="315" src="/static/styles/sea.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div> -->
+             
+       </form>
+    </div>
+    <script>
+        var error = '{{ error }}'
+        if(error){
+            alert(error)
+        }
+    </script>
+
+</body>
+</html>
